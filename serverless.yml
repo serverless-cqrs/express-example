@@ -2,9 +2,9 @@ service: serverless-cqrs-express-example
 
 ## let's define some constants to use later in this file
 custom:
-  writeModelTableName: commitsByEntityIdAndVersion
+  writeModelTableName: expressCommitsByEntityIdAndVersion
   writeModelIndexName: indexByEntityNameAndCommitId
-  readModelDomainName: readmodel
+  readModelDomainName: express-readmodel
 
 provider:
   name: aws
