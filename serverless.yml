@@ -1,6 +1,6 @@
 service: serverless-cqrs-express-example
 
-## define some static variables
+## let's define some constants to use later in this file
 custom:
   writeModelTableName: commitsByEntityIdAndVersion
   writeModelIndexName: indexByEntityNameAndCommitId
@@ -35,7 +35,7 @@ provider:
       Resource:
         - "*"   
 
-## create the following API Gateway endpoints and connect them to our app
+## Create an API Gateway and connect it to our handler function
 functions:    
   router:
     handler: index.handler
@@ -45,6 +45,7 @@ functions:
 
 resources:
   Resources:
+    
     ## create the dynamodb table for storing events
     EventStoreTable:
       Type: 'AWS::DynamoDB::Table'
